@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "QfStudent";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="showtime1" style="overflow-y:auto">
+
+
+    <table style="width:90% ">
+        <caption>Student Questions DashBoard</caption>
+        <tr style="font-size:16px;border: 2px solid black;">
+
+            <th> ID </th>
+            <th> Question  </th>
+            <th>Answer</th>
+            <th>Status</th>
+            <th style="width:3%">Update</th>
+            <th style="width:3%">Delete</th>
+
+        </tr>
+
+        @foreach (var x in Model)
+        {
+            <tr>
+
+                <td> @x.Id  </td>
+                <td> @x.Question</td>
+                <td> @x.Ans  </td>
+                <td> @x.status  </td>
+                <td> <a href="/Admin/UpdateQFStudent/@x.Id" class="btn btn-default ">Update</a></td>
+                <td> <a href="/Admin/DeleteQFStudent/@x.Id" class="btn btn-default ">Delete</a></td>
+
+            </tr>
+
+        }
+    </table>
+
+
+    <ul>
+        <li><a href="#" class="btn btn-default " data-toggle="modal" data-target="#myModal"> Add</a></li>
+    </ul>
+
+</div>
+<!--Add-->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: rgba(92, 183, 92, 0.67); color: white;">
+            <button id="close" type="button" class="close" style="margin-right:-100px;color:white" data-dissmiss="modal">&times;</button>
+            <h4 class="modal-title" style="font-size:xx-large;margin-left:25px">Add Question</h4>
+            <div class="modal-body">
+
+                <form action="/Admin/AddQfStudent" method="post">
+                    <div class="form-group " style="padding-left:125px">
+
+
+                        <label for="Question">Question</label>
+                        <input name="t1"  value="" type="text" style="color:black" />
+                        <br />
+                        <label for="Ans">Answer</label>
+                        <input name="t2" value="" type="text" style="color:black">
+                        <br />
+                        <label for="Status">Status</label>
+                        <input name="t3" value="" type="text" style="color:black">
+                        <br />
+                        <br/>
+                        <input value="Add" class="btn btn-default " type="submit">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="Strm" style="top:auto; bottom:0px ;height:100%; overflow-y:auto">
+    <h2>Update User</h2>
+    <p style="text-align:left; margin-left:10px">Details</p>
+    <form action="/Admin/UpdateUUser/@Model.Id" method="post">
+        <div class="form-group " style="padding-left:4px">
+
+            <label for="Name">Name</label>
+            <input id="Name" name="Name" value="@Model.Name" type="text" style="color:black">
+            <br />
+            <label for="UserName">UserName</label>
+            <input id="UserName" name="UserName" value="@Model.UserName" type="text" style="color:black">
+            <br />
+
+            <label for="Pin">Pin</label>
+            <input id="Pin" name="Pin" value="@Model.Pin" type="text" style="color:black">
+            <br />
+            <label for="Role">Account type</label>
+
+
+            <input type="radio" name="role" style="width:25px" value="Listener" checked>Listener<br>
+            <input type="radio" style="width:25px" name="role" value="Admin" alrt>Admin<br>
+            <br />
+            <label for="Email">Email</label>
+            <input id="Email" name="Email" value="@Model.Email" type="email" style="color:black">
+            <br />
+            <label for="Phone">Mobile #</label>
+            <input id="Phone" name="Phone" value="@Model.Phone" type="number" style="color:black">
+            <br />
+            <label for="Address">Address</label>
+            <input id="Address" name="Address" value="@Model.Address" type="text" style="color:black">
+            <br />
+            <label for="Gender">Gender</label>
+
+            <input type="radio" name="gender" style="width:25px" value="male" checked> Male<br>
+            <input type="radio" style="width:25px" name="gender" value="female"> Female<br>
+
+            <br />
+
+            <label for="Status">Status</label>
+            <input type="radio" name="Status" style="width:25px" value="Disable" checked>Disable<br>
+            <input type="radio" style="width:25px" name="Status" value="Active" >Active<br>
+
+
+            <br />
+
+
+        </div>
+
+
+        <button type="submit" class="btn btn-default ">Update</button>
+        <br />
+
+    </form>
+
+</div>
+

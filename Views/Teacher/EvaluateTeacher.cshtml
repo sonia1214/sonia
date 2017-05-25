@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "EvaluateTeacher";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+<body onload="loadme()">
+    <script>
+        function loadme() {
+            $("#myModal").modal('show');
+        }
+    </script>
+    <div class="showtime1" style="overflow-y:auto">
+
+
+
+        <form method="post" action="/Teacher/EvalutateTeacher">
+            <h2>Select your Teacher</h2>
+            <select name="tchrList" style="height:30px">
+                @foreach (var v in ViewBag.tchrz)
+                {
+                    <option value="@v.Id,@v.Name">@v.Name</option>
+                }
+            </select>
+            <h2>Questions </h2>
+            @foreach (var x in Model)
+            {
+                <div class="row">
+                    <h3>Qestion @x.Id:&nbsp;@x.Question</h3><br>
+                    <input type="radio" name="@("ans"+@x.Id)" style="width:25px" value="100">5&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="@("ans"+@x.Id)" style="width:25px" value="75">4&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="@("ans"+@x.Id)" style="width:25px" value="50">3&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="@("ans"+@x.Id)" style="width:25px" value="25">2&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="@("ans"+@x.Id)" style="width:25px" value="0">1&nbsp;&nbsp;&nbsp;
+
+                </div>
+
+            }
+            <>
+            <br />
+            <button type="submit" class="btn btn-default ">Submit</button>
+        </form>
+
+
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color: GrayText; color: white">
+                <div class="modal-header">
+
+                    <h4 class="modal-title">Instructions</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Evaluate your teacher carefully</p>
+                    <ul>
+                        <li>If you choose 1 you will rate 0% to your teacher</li>
+                        <li>If you choose 2 you will rate 25% to your teacher</li>
+                        <li>If you choose 3 you will rate 50% to your teacher</li>
+                        <li>If you choose 4 you will rate 75% to your teacher</li>
+                        <li>If you choose 5 you will rate 100% to your teacher</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "UpdateQUIZFS";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<div class="Strm" style="top:auto; bottom:0px ;height:100%; overflow-y:auto">
+    <h2>Update Question Student</h2>
+    <p style="text-align:left; margin-left:10px">Details</p>
+    <form action="/Teacher/UpdateQQUIZFS/@Model.Id" method="post">
+        <div class="form-group " style="padding-left:4px">
+
+            <label for="Question">Question</label>
+            <input id="" name="Question" value="@Model.Question" type="text" style="color:black">
+            <br />
+            <label for="Answer">Answer</label>
+            <input id="" name="Ans" value="@Model.Ans" type="text" style="color:black">
+            <br />
+
+            <label for="Status">Status</label>
+            <input type="radio" name="status" style="width:25px" value="Disable">Disable<br>
+            <input type="radio" style="width:25px" name="status" value="Active" checked>Active<br>
+
+
+            <br />
+
+
+        </div>
+
+
+        <button type="submit" class="btn btn-default ">Update</button>
+        <br />
+
+    </form>
+
+</div>
+

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "NewsUpdate";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model QMS.Models.NewsAlert
+
+
+<div class="Strm" style="top:auto; bottom:0px ;height:100%;">
+    <h2>News Update</h2>
+    <p style="text-align:left; margin-left:10px">Details</p>
+    <form action="/Admin/NNewsUpdate/@Model.Id" method="post">
+        <div class="form-group " style="padding-left:4px">
+
+
+            <label for="News">News</label>
+            <input name="News" value="@Model.News" type="text" style="color:black">
+            <br />
+
+            <label for="Link">Link</label>
+            <input name="Link" value="@Model.Link" type="text" style="color:black">
+            <br />
+
+            <label for="Status">Status</label>
+            <input name="Status" value="@Model.Status" type="text" style="color:black">
+            <br />
+            <label for="detail">Detail</label>
+            <input name="detail" value="@Model.detail" type="text" style="color:black">
+            <br />
+
+        </div>
+
+
+        <button type="submit" class="btn btn-default ">Update</button>
+        <br />
+
+    </form>
+
+</div>
