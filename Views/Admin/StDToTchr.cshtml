@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "StDToTchr";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="showtime1" style="overflow-y:auto">
+    <table>
+        <caption>Teacher's Evaluation</caption>
+        <thead>
+            <tr style="font-size:16px;border: 2px solid black;">
+                <th>Teacher's ID</th>
+                <th>Teacher's name</th>
+                <th>Student's ID</th>
+                <th>Rating in %</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in ViewBag.tlist)
+            {
+                <tr>
+                    <td>@v.Teacher_Id</td>
+                    <td>@v.Teacher_Name</td>
+                    <td>@v.Std_Id</td>
+                    <td>@v.results</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
